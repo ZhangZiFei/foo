@@ -1,0 +1,29 @@
+[{
+    "v": {
+        "name": "demo1",
+        "href": "./demo1",
+        "description": "开发者 才能看到</br>(内容暂无)"
+    },
+    "authority": "开发者"
+}, {
+    "v": {
+        "name": "demo2",
+        "href": "./demo2",
+        "description": "高级管理员 才能看到</br>(内容暂无)"
+    },
+    "authority": "高级管理员"
+}, {
+    "v": {
+        "name": "demo3",
+        "href": "./demo3",
+        "description": "普通用户 才能看到</br>(内容暂无)"
+    },
+    "authority": "普通用户"
+}, {
+    "v": {
+        "name": "demo4",
+        "href": "./demo4",
+        "description": "销售部门 才能看到</br>同页面操作的权限管控"
+    },
+    "authority": "销售部门"
+}]
