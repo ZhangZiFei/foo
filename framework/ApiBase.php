@@ -72,8 +72,6 @@ ApiBase::$api = new ApiBase();
 set_exception_handler(function ($e) {
     try {
         http_response_code(530);
-        $log = new Tool\Log('exception');
-        $log->Error($e->__toString());
         ApiBase::Error($e->getCode(), get_class($e), $e->getMessage());
     } catch (\Throwable $th) {
         ApiBase::Error(-2, 'set_exception_handler', $th->getMessage());
@@ -82,14 +80,6 @@ set_exception_handler(function ($e) {
 set_error_handler(function (int $errno, string $errstr, string $errfile, int $errline, array $errcontext = []) {
     try {
         http_response_code(530);
-        $log = new Tool\Log('error');
-        $log->Error($errstr, [
-            '错误级别' => $errno,
-            '错误信息' => $errstr,
-            '错误文件' => $errfile,
-            '错误行号' => $errline,
-            'errcontext' => $errcontext
-        ]);
         ApiBase::Error(-3, 'php error', $errstr);
     } catch (\Throwable $th) {
         ApiBase::Error(-1, 'set_error_handler', $th->getMessage());
